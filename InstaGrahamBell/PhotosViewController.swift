@@ -51,14 +51,27 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.photos?.count ?? 0
     }
+
+
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MediaCell") as! MediaCell
         let photo = self.photos![indexPath.row]
         let imageUrl = photo["images"]!["standard_resolution"]!!["url"] as! String
+//        let imageUrl = "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNzM5ODM4OTg4.jpg"
         
         cell.photoView.setImageWithURL(NSURL(string: imageUrl)!)
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        
+        let detailViewController = segue.destinationViewController as! PhotoDetailViewController
+        detailViewController.photo = photos![indexPath!.row]
     }
 
 }
