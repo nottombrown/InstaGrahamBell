@@ -12,9 +12,12 @@
 		823EE95F1C62F7EA00D97F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823EE95D1C62F7EA00D97F43 /* Main.storyboard */; };
 		823EE9611C62F7EA00D97F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823EE9601C62F7EA00D97F43 /* Assets.xcassets */; };
 		823EE9641C62F7EA00D97F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823EE9621C62F7EA00D97F43 /* LaunchScreen.storyboard */; };
+		F4ACDE0E2981220B4DCD5667 /* Pods_InstaGrahamBell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC85168D1E4D5B2BF4D9AC42 /* Pods_InstaGrahamBell.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01436649DC533A8838D402A5 /* Pods-InstaGrahamBell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGrahamBell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaGrahamBell/Pods-InstaGrahamBell.debug.xcconfig"; sourceTree = "<group>"; };
+		29FE628762844CCAD687B1E6 /* Pods-InstaGrahamBell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGrahamBell.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaGrahamBell/Pods-InstaGrahamBell.release.xcconfig"; sourceTree = "<group>"; };
 		823EE9561C62F7EA00D97F43 /* InstaGrahamBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGrahamBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823EE9591C62F7EA00D97F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		823EE95B1C62F7EA00D97F43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		823EE9601C62F7EA00D97F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823EE9631C62F7EA00D97F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823EE9651C62F7EA00D97F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC85168D1E4D5B2BF4D9AC42 /* Pods_InstaGrahamBell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaGrahamBell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ACDE0E2981220B4DCD5667 /* Pods_InstaGrahamBell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				823EE9581C62F7EA00D97F43 /* InstaGrahamBell */,
 				823EE9571C62F7EA00D97F43 /* Products */,
+				A04942ED058E99AC7EB86E15 /* Pods */,
+				EE0A903A3DBFCE0FB0B0B0FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = InstaGrahamBell;
 			sourceTree = "<group>";
 		};
+		A04942ED058E99AC7EB86E15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01436649DC533A8838D402A5 /* Pods-InstaGrahamBell.debug.xcconfig */,
+				29FE628762844CCAD687B1E6 /* Pods-InstaGrahamBell.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE0A903A3DBFCE0FB0B0B0FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC85168D1E4D5B2BF4D9AC42 /* Pods_InstaGrahamBell.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 823EE9681C62F7EA00D97F43 /* Build configuration list for PBXNativeTarget "InstaGrahamBell" */;
 			buildPhases = (
+				90308FA2475B810A70F53AEB /* Check Pods Manifest.lock */,
 				823EE9521C62F7EA00D97F43 /* Sources */,
 				823EE9531C62F7EA00D97F43 /* Frameworks */,
 				823EE9541C62F7EA00D97F43 /* Resources */,
+				B0B276A2EB2169365B12D859 /* Embed Pods Frameworks */,
+				5057C8C9FEFA535FA5319F18 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5057C8C9FEFA535FA5319F18 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaGrahamBell/Pods-InstaGrahamBell-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90308FA2475B810A70F53AEB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B0B276A2EB2169365B12D859 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaGrahamBell/Pods-InstaGrahamBell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		823EE9521C62F7EA00D97F43 /* Sources */ = {
@@ -245,6 +320,7 @@
 		};
 		823EE9691C62F7EA00D97F43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01436649DC533A8838D402A5 /* Pods-InstaGrahamBell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InstaGrahamBell/Info.plist;
@@ -256,6 +332,7 @@
 		};
 		823EE96A1C62F7EA00D97F43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29FE628762844CCAD687B1E6 /* Pods-InstaGrahamBell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InstaGrahamBell/Info.plist;
@@ -284,6 +361,7 @@
 				823EE96A1C62F7EA00D97F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
