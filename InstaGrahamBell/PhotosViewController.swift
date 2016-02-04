@@ -12,7 +12,7 @@ import AFNetworking
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
-    var photos: [NSDictionary]?
+    var photos: [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,18 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let refreshControl = UIRefreshControl()
         tableView.insertSubview(refreshControl, atIndex: 0)
 
-        refreshControl.addTarget(self, action: "networkRequest:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: "refreshCallback:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.rowHeight = 320
         
         networkRequest()
+        
+        let tableFooterView: UIView = UIView(frame: CGRectMake(0, 0, 320, 50))
+        let loadingView: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        loadingView.startAnimating()
+        loadingView.center = tableFooterView.center
+        tableFooterView.addSubview(loadingView)
+        self.tableView.tableFooterView = tableFooterView
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +41,16 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.photos?.count ?? 0
+        print(self.photos.count)
+        return self.photos.count
     }
     
-    func networkRequest(refreshControl: UIRefreshControl? = nil) {
+    func refreshCallback(refreshControl: UIRefreshControl) {
+        networkRequest(refreshControl, nuke: true)
+    }
+    
+    func networkRequest(refreshControl: UIRefreshControl? = nil, nuke: Bool = false) {
+        print("NETWORK")
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
         let request = NSURLRequest(URL: url!)
@@ -52,7 +65,13 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 if let data = dataOrNil {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
-                            self.photos = responseDictionary["data"] as? [NSDictionary]
+                            if nuke {
+                                self.photos = responseDictionary["data"] as! [NSDictionary]
+                            } else {
+                                self.photos += responseDictionary["data"] as! [NSDictionary]
+                            }
+                            print("count: \(self.photos.count)")
+                            
                             self.tableView.reloadData()
                             if let refreshControl = refreshControl {
                                 refreshControl.endRefreshing()
@@ -69,8 +88,12 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("loading cell: \(indexPath)")
+        if indexPath.row == photos.count - 1 {
+            networkRequest()
+        }
         let cell = tableView.dequeueReusableCellWithIdentifier("MediaCell") as! MediaCell
-        let photo = self.photos![indexPath.row]
+        let photo = self.photos[indexPath.row]
         cell.photoView.setImageWithURL(getUrlFromPhoto(photo))
         return cell
     }
@@ -92,7 +115,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let indexPath = tableView.indexPathForCell(cell)
         
         let detailViewController = segue.destinationViewController as! PhotoDetailViewController
-        let photo = photos![indexPath!.row]
+        let photo = photos[indexPath!.row]
         detailViewController.photo = photo
         detailViewController.url = getUrlFromPhoto(photo)
     }
