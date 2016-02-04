@@ -12,6 +12,7 @@
 		823EE95F1C62F7EA00D97F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823EE95D1C62F7EA00D97F43 /* Main.storyboard */; };
 		823EE9611C62F7EA00D97F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823EE9601C62F7EA00D97F43 /* Assets.xcassets */; };
 		823EE9641C62F7EA00D97F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823EE9621C62F7EA00D97F43 /* LaunchScreen.storyboard */; };
+		9BA0238D1C62FC4200327220 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0238C1C62FC4200327220 /* MediaCell.swift */; };
 		F4ACDE0E2981220B4DCD5667 /* Pods_InstaGrahamBell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC85168D1E4D5B2BF4D9AC42 /* Pods_InstaGrahamBell.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		823EE9601C62F7EA00D97F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823EE9631C62F7EA00D97F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823EE9651C62F7EA00D97F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BA0238C1C62FC4200327220 /* MediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		BC85168D1E4D5B2BF4D9AC42 /* Pods_InstaGrahamBell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaGrahamBell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				823EE9601C62F7EA00D97F43 /* Assets.xcassets */,
 				823EE9621C62F7EA00D97F43 /* LaunchScreen.storyboard */,
 				823EE9651C62F7EA00D97F43 /* Info.plist */,
+				9BA0238C1C62FC4200327220 /* MediaCell.swift */,
 			);
 			path = InstaGrahamBell;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				823EE95C1C62F7EA00D97F43 /* PhotosViewController.swift in Sources */,
+				9BA0238D1C62FC4200327220 /* MediaCell.swift in Sources */,
 				823EE95A1C62F7EA00D97F43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
