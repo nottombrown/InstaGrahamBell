@@ -18,9 +18,26 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        let refreshControl = UIRefreshControl()
+        tableView.insertSubview(refreshControl, atIndex: 0)
+
+        refreshControl.addTarget(self, action: "networkRequest:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.rowHeight = 320
         
+        networkRequest()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.photos?.count ?? 0
+    }
+    
+    func networkRequest(refreshControl: UIRefreshControl? = nil) {
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
         let request = NSURLRequest(URL: url!)
@@ -37,19 +54,13 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                         data, options:[]) as? NSDictionary {
                             self.photos = responseDictionary["data"] as? [NSDictionary]
                             self.tableView.reloadData()
+                            if let refreshControl = refreshControl {
+                                refreshControl.endRefreshing()
+                            }
                     }
                 }
         });
         task.resume()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.photos?.count ?? 0
     }
 
 
