@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		823EE95A1C62F7EA00D97F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823EE9591C62F7EA00D97F43 /* AppDelegate.swift */; };
-		823EE95C1C62F7EA00D97F43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823EE95B1C62F7EA00D97F43 /* ViewController.swift */; };
+		823EE95C1C62F7EA00D97F43 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823EE95B1C62F7EA00D97F43 /* PhotosViewController.swift */; };
 		823EE95F1C62F7EA00D97F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823EE95D1C62F7EA00D97F43 /* Main.storyboard */; };
 		823EE9611C62F7EA00D97F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823EE9601C62F7EA00D97F43 /* Assets.xcassets */; };
 		823EE9641C62F7EA00D97F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823EE9621C62F7EA00D97F43 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		29FE628762844CCAD687B1E6 /* Pods-InstaGrahamBell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGrahamBell.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaGrahamBell/Pods-InstaGrahamBell.release.xcconfig"; sourceTree = "<group>"; };
 		823EE9561C62F7EA00D97F43 /* InstaGrahamBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGrahamBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823EE9591C62F7EA00D97F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		823EE95B1C62F7EA00D97F43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		823EE95B1C62F7EA00D97F43 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		823EE95E1C62F7EA00D97F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		823EE9601C62F7EA00D97F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823EE9631C62F7EA00D97F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				823EE9591C62F7EA00D97F43 /* AppDelegate.swift */,
-				823EE95B1C62F7EA00D97F43 /* ViewController.swift */,
+				823EE95B1C62F7EA00D97F43 /* PhotosViewController.swift */,
 				823EE95D1C62F7EA00D97F43 /* Main.storyboard */,
 				823EE9601C62F7EA00D97F43 /* Assets.xcassets */,
 				823EE9621C62F7EA00D97F43 /* LaunchScreen.storyboard */,
@@ -210,7 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823EE95C1C62F7EA00D97F43 /* ViewController.swift in Sources */,
+				823EE95C1C62F7EA00D97F43 /* PhotosViewController.swift in Sources */,
 				823EE95A1C62F7EA00D97F43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
