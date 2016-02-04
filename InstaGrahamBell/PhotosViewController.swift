@@ -69,6 +69,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("MediaCell") as! MediaCell
         let photo = self.photos![indexPath.row]
         let imageUrl = photo["images"]!["standard_resolution"]!!["url"] as! String
+// UNCOMMENT FOR FUN!!!
 //        let imageUrl = "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNzM5ODM4OTg4.jpg"
         
         cell.photoView.setImageWithURL(NSURL(string: imageUrl)!)
