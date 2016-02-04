@@ -77,10 +77,12 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getUrlFromPhoto(photo:NSDictionary) -> NSURL {
         let imageUrl = photo["images"]!["standard_resolution"]!!["url"] as! String
-        //        let imageUrl = "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNzM5ODM4OTg4.jpg"
+        
+        // UNCOMMENT FOR FUN!!!
+        // let imageUrl = "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNzM5ODM4OTg4.jpg"
         
         return NSURL(string: imageUrl)!
-
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
